@@ -1,5 +1,69 @@
-# Control unit for monitoring fluid parameters
-## Control unit for liquid level, temperature, and turbidity monitoring
-The central element of the circuit is a microcontroller that processes signals from sensors and controls, and generates control commands for the actuating devices. During operation, the microcontroller receives data on liquid level, temperature, turbidity, and the status of the emergency sensor, as well as signals from the keypad, switch, and level-setting unit. Based on this information, the current liquid level is compared with the user-defined setpoint.
-When the liquid level drops below the established setpoint, the microcontroller generates a control signal for the relay, which activates the filling device. Liquid supply is cut off once the preset level is reached. If the liquid level exceeds the permissible limit or the emergency overflow sensor triggers, the system enters emergency mode: the filling device is deactivated, the corresponding indicator turns on, and the draining device may also be activated. This ensures protection against tank overfilling and malfunctions of the actuating mechanisms.
-Controls allow the user to select the system operating mode, start or stop pumps, adjust the setpoint, and reset the emergency state. The display system is designed to show the control unit's current status, operating mode, error conditions, and key fluid parameters. The use of dedicated 5 V power supplies ensures that system components are powered according to their operating voltages, while relay modules provide electrical isolation between control circuits and the power circuits of the actuating devices.
+# 🚀 Разработка блока управления резервуаром для испытаний подводного робота
+
+
+
+📧 Почта: [Email](mailto:chernykh_0970@mail.ru)  
+📱 ВКонтакте: [Максим Черных](https://vk.com/fa1r0ff)
+
+---
+
+## 📌 Краткое описание системы
+
+Разрабатывается **блок управления уровнем жидкости** в резервуаре для испытаний подводных роботов.
+
+**Функционал системы:**
+- Автоматическое поддержание заданного уровня жидкости
+- Контроль температуры и мутности воды
+- Управление насосами (наполнение/слив)
+- Аварийная защита от перелива и сухого хода
+- Индикация состояния (LCD-дисплей, светодиоды)
+- Ручное управление через кнопки и потенциометр
+
+**Компонентная база:**
+- Микроконтроллер: **Arduino Nano (ATmega328P)**
+- Релейный модуль: **HW-383 (2 канала)**
+- Преобразователь интерфейса: **MAX485**
+- Датчик уровня жидкости **QDY30A**
+- Датчик температуры **DS18B20**
+- Аварийный датчик **XKC-Y25-V**
+- Датчик мутности **TS-300B**
+
+---
+
+## 📡 Датчик уровня жидкости по RS-485
+
+В системе используется **датчик уровня жидкости с интерфейсом RS-485 - QDY30A**. 
+
+![](https://ae01.alicdn.com/kf/S38c3000e2d374c7f8421e2cfa7997f44O.png)
+Данный датчик был выбран, потому что он является одним из самых точных среди своих аналогов. 
+
+---
+
+## 🖥️ 3D-вид печатной платы
+
+![3D модель печатной платы]("Smart-liquid-level-control/3D view.png")
+
+**Характеристики платы:**
+- **Размеры:** 115 × 135 мм
+- **Количество слоёв:** 2
+- **Компонентов:** 25
+- **Переходных отверстий:** 11
+
+---
+
+## 🚀 Планы развития
+
+1. **Разработка корпуса блока управления**  
+   — 3D-моделирование корпуса с учётом герметичности, размещения платы и разъёмов для датчиков и насосов
+
+2. **Разработка GUI-интерфейса**  
+   — Создание приложения для удалённого мониторинга и управления на **Qt** (C++) или **Processing** (Java)
+   
+   **Функции GUI:**
+   - Отображение уровня жидкости, температуры и мутности в реальном времени
+   - Визуализация состояния насосов и аварийных сигналов
+   - Удалённое изменение уставок и режимов работы
+   - Графики изменения параметров за период
+
+---
+ Спасибо за внимание к моему проекту, до скорых встреч!
