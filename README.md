@@ -41,7 +41,7 @@
 
 ## 🖥️ 3D-вид печатной платы
 
-[](https://github.com/TeXniKsueta/Smart-liquid-level-control/blob/af5bcfacc25a37ee8acd09b58beefff72846bf13/3D%20view.png)
+[3D model PCB](https://github.com/TeXniKsueta/Smart-liquid-level-control/blob/af5bcfacc25a37ee8acd09b58beefff72846bf13/3D%20view.png)
 
 **Характеристики платы:**
 - **Размеры:** 115 × 135 мм
